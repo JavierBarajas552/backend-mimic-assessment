@@ -69,7 +69,10 @@ def print_mimic(mimic_dict, start_word):
     next_word = random.choice(mimic_dict.get(start_word))
     for x in range(200):
         story += ' ' + next_word
-        next_word = random.choice(mimic_dict.get(next_word))
+        try:
+            next_word = random.choice(mimic_dict.get(next_word))
+        except:
+            next_word = start_word
     print(story)
     pass
 
